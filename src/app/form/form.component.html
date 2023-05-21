@@ -1,0 +1,108 @@
+<p>Hip!</p>
+<ng-template >
+  <p> inside tamplet Hip!</p>
+</ng-template>
+<div
+
+ class="pageWrapper">
+  <div class="Form_Wrapper_Div">
+    <form [formGroup]="myForm">
+      <div>Name</div>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+      <div *ngIf="submitt && name.errors">
+        <span *ngIf="name.errors.required"
+          >This Field Cannot Be Left Blank
+        </span>
+      </div>
+      <div>Email</div>
+      <mat-form-field appearance="outline">
+        <input matInput formControlName="email" placeholder="abc@gmail.com" />
+      </mat-form-field>
+      <div *ngIf="submitt && email.errors">
+        <span *ngIf="email.errors.required"
+          >This Field Cannot Be Left Blank
+        </span>
+      </div>
+      <div>Contact</div>
+      <mat-form-field appearance="outline">
+        <input matInput formControlName="mob" placeholder="+91XXXXXXXXX" />
+      </mat-form-field>
+      <div *ngIf="submitt && mob.errors">
+        <span *ngIf="mob.errors.required">
+          This field can't be blank and Should be number</span
+        >
+      </div>
+
+      <h1>Add dynamic Form Control</h1>
+     <div formArrayName="auther">
+      <div *ngFor="let auth of auther.controls; let i=index ">
+        <div>Auther</div>
+      <mat-form-field appearance="outline" [formGroupName]="i">
+        <input matInput placeholder="auther" formControlName="fulltName" />
+      </mat-form-field>
+      <!-- <button (click)="removeAuther(i)">Remove Auther</button> -->
+      <button mat-raised-button color="primary" (click)="removeAuther(i)" >
+        Remove Auther
+      </button>
+      </div>
+     </div>
+     <!-- <button >AddMore</button> -->
+     <div><button mat-raised-button color="primary" (click)=" addMore()" >
+      Add Auther
+    </button></div>
+    <p></p>
+      <!-- <div class="genderWrapper">
+         
+          <mat-radio-group aria-label="Select an option" class="mat-radio-group-genSect" formControlName="gender">
+            <div class="genderOption">
+              <div class="mandatorySymbol">
+                <div>Gender</div>
+                <span>*</span>
+               </div>
+              <mat-radio-button value="Male">Male</mat-radio-button>
+              <mat-radio-button value="Female">Female</mat-radio-button>
+              <mat-radio-button value="Other">Other</mat-radio-button>
+            </div>
+          </mat-radio-group>
+         
+          <mat-form-field appearance="fill" class="countryField">
+            <mat-label>Select an Country</mat-label>
+            <mat-select  formControlName="country">
+              <mat-option>None</mat-option>
+              <mat-option value="India">India</mat-option>
+              <mat-option value="Pak">Pak</mat-option>
+              <mat-option value="Bangladesh">Bangladesh</mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+        
+         
+        </div> -->
+      <div>
+        <!-- <mat-form-field  class="ageField" >
+           
+            <div class="mandatorySymbol">
+              <div>Age</div>
+              <span>*</span>
+             </div>
+          <div class="age_Val">
+            <input matInput [matDatepicker]="picker" formControlName="Dob">
+          
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          </div>
+          <mat-datepicker #picker></mat-datepicker> 
+          </mat-form-field> -->
+      </div>
+
+      <!-- <mat-checkbox formControlName="agree" class="example-margin">Check me!</mat-checkbox> -->
+
+      <button mat-raised-button color="primary" (click)="submitForm()">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+
