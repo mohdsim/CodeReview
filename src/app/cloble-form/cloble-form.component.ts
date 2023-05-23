@@ -31,7 +31,7 @@ export class ClobleFormComponent implements OnInit {
         this.DesizeredControl[item]=null;
        })
       
-      console.log("in Globle Form objectKey",this.DesizeredControl)
+     // console.log("in Globle Form objectKey",this.DesizeredControl)
       this.myForm=this.fb.group(this.DesizeredControl)
   
     }
