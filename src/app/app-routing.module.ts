@@ -18,10 +18,10 @@ const routes: Routes = [
   },
   {
     path:'apiTest',component:ApiTestComponent
-  }
+  },
  
   //  { path: '', component: FirstComponent, data: { title: 'First Component' } },
-  // { path: 'first', component: FirstComponent, data: { title: 'First Component' } },
+   { path: 'first', component: FirstComponent},
   // { path: 'second', component: SecondComponent, data: { title: 'Second Component' } }
   
 

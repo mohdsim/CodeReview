@@ -29,6 +29,7 @@ import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ApiTestComponent } from './api-test/api-test.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClobleFormComponent } from './cloble-form/cloble-form.component';
 
 
 @NgModule({
@@ -38,21 +39,18 @@ import { HttpClientModule } from '@angular/common/http';
     SecondComponent,
     NavigationComponent,
     FormComponent,
-    ApiTestComponent
+    ApiTestComponent,
+    ClobleFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // MatToolbarModule,
-    // MatSidenavModule,
-    // MatButtonModule,
-    // MatIconModule,
+    
     MaterialModule,
     ReactiveFormsModule,
      HttpClientModule,
-    // MatDividerModule,
-    // MatButtonModule,MatToolbarModule, MatNativeDateModule, MatIconModule, MatSidenavModule, MatListModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

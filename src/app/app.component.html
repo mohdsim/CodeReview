@@ -1,50 +1,47 @@
-
-
-
 <div class="sidebar-container">
-    <mat-toolbar color="primary" class="sidebar-toolbar">
-      <button  mat-icon-button routerLink="reactiveForm">
-           Form
-       
+  <mat-toolbar color="primary" class="sidebar-toolbar">
+    <button mat-icon-button routerLink="reactiveForm">
+      Form
+
     </button>
-        
-        <button  mat-icon-button (click)="snav.toggle()">
-           
-            Toggle
-        </button>
-       
-    </mat-toolbar>
-<mat-sidenav-container class="sidebar-sidenav-container">
-      <mat-sidenav #snav mode="side" fixedTopGap="56" opened="true">
-        
-        <mat-nav-list>
-           <mat-list-item >
-             
-              <span>Animated counter</span>
-           </mat-list-item>
-           <mat-list-item  >
-            
-            <span>Input integer</span>
-         </mat-list-item>
-         <mat-list-item >
-         <mat-icon>dashboard</mat-icon><span>Dashboard</span> 
+
+    <button mat-icon-button (click)="snav.toggle()">
+
+      Toggle
+    </button>
+
+  </mat-toolbar>
+  <mat-sidenav-container class="sidebar-sidenav-container">
+    <mat-sidenav #snav mode="side" fixedTopGap="56" opened="true">
+
+      <mat-nav-list>
+        <mat-list-item>
+
+          <span>Animated counter</span>
+        </mat-list-item>
+        <mat-list-item routerLink="first">
+          Globle Form
          
-       
-       </mat-list-item>
-      
-       <mat-list-item >
-       
-        <span>Three Tab</span>
-       
-     </mat-list-item>
-       <mat-list-item >
-       
-        <span>Json Operation</span>
-     </mat-list-item>
-     <mat-list-item >
-      
-   </mat-list-item>
-   <mat-accordion class="accordianList">
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>dashboard</mat-icon><span>Dashboard</span>
+
+
+        </mat-list-item>
+
+        <mat-list-item>
+
+          <span>Three Tab</span>
+
+        </mat-list-item>
+        <mat-list-item>
+
+          <span>Json Operation</span>
+        </mat-list-item>
+        <mat-list-item>
+
+        </mat-list-item>
+        <!-- <mat-accordion class="accordianList">
     <mat-expansion-panel   hideToggle>
      
       
@@ -58,72 +55,44 @@
     
 
     </mat-expansion-panel>
-  </mat-accordion>
-   <mat-list-item >
-    
-    <span>Directive Assignment</span>
-  </mat-list-item>
-  <mat-list-item  routerLink="reactiveForm">Form
-   
-  </mat-list-item>
-  <mat-list-item  routerLink="apiTest">
-    
-    <span>Api Test</span>
-  </mat-list-item>
-  <mat-list-item >
-   
-    <span>Calculator</span>
-  </mat-list-item>
-  <mat-list-item>
+  </mat-accordion> -->
+        <mat-list-item>
 
-   
-  </mat-list-item>
-  <mat-list-item>
+          <span>Directive Assignment</span>
+        </mat-list-item>
+        <mat-list-item routerLink="reactiveForm">Form
 
-    <mat-accordion>
-      <mat-expansion-panel   hideToggle>
-       
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-             Icon
-          </mat-panel-title>
-          <mat-panel-description>
-             Data Shairing
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p> panel.</p>
-       
-      </mat-expansion-panel>
-       <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Self aware panel
-          </mat-panel-title>
-          <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </mat-list-item>
-  
-  
-  
-  
-          
-  
-         
-        </mat-nav-list> 
-        
-        
-        
-      </mat-sidenav>
-      <mat-sidenav-content class="router-container">
-        <router-outlet></router-outlet>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
-  
-  
+        </mat-list-item>
+        <mat-list-item routerLink="apiTest">
+
+          <span>Api Test</span>
+        </mat-list-item>
+        <mat-list-item>
+
+          <span>Calculator</span>
+        </mat-list-item>
+        <mat-list-item>
+
+
+        </mat-list-item>
+        <mat-list-item>
+
+
+        </mat-list-item>
+
+
+
+
+
+
+
+      </mat-nav-list>
+
+
+
+    </mat-sidenav>
+    <mat-sidenav-content class="router-container">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

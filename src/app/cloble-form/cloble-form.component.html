@@ -1,0 +1,11 @@
+<p>cloble-form works!</p>
+<div>
+    <form [formGroup]="myForm">
+         <mat-form-field *ngFor="let i of objectKey" appearance="outline">
+              <input placeholder={{i}} matInput formControlName={{i}}/>
+         </mat-form-field>
+    </form>
+    <div>
+        <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+    </div>
+</div>
