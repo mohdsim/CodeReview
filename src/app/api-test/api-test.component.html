@@ -1,7 +1,21 @@
-<p>api-test works!</p>
+<div >
+   <mat-form-field appearance="outline" class="test-class">
+     <input matInput placeholder="border-radius test"/>
+   </mat-form-field>
+   <mat-form-field appearance="outline"  >
+     <input matInput placeholder="border-radius test"/>
+   </mat-form-field>
+ </div>
+ 
 
-<div>
-   <!-- {{apiRes[0]?.first_name | async}}  -->
+
+
+
+<p>api-test works!</p>
+<input id="tim" type="time">
+<div *ngFor="let i of apiRes$ |async ;let j = index">
+   
+ <div>{{j+1}} {{i.first_name}},{{i.last_name}}</div>
 </div>
 <div *ngIf="isClicked">
    <app-cloble-form [receivedControl]="sendRequiredControl"></app-cloble-form>

@@ -5,10 +5,18 @@ import { SecondComponent } from './second/second.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FormComponent } from './form/form.component';
 import { ApiTestComponent } from './api-test/api-test.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DateComponent } from './date/date.component';
 
 const routes: Routes = [
   {
     path:'navigation',component:NavigationComponent
+  },
+  {
+    path:'formatdate',component:DateComponent
+  },
+  {
+    path:'dashboard',component:DashboardComponent
   },
   {
     path:'reactiveForm',component:FormComponent

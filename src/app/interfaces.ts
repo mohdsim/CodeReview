@@ -9,27 +9,11 @@
  export interface sellerApiResp{
    categoary?:string,
    ['User-id?']:any,
-//    User-id?:String,
-
-// category
-// : 
-// ['Electronics']
-// city
-// : 
-// "Hisar"
-// first_name
-// : 
-// "Pankaj"
-// last_name?
-// :any
-
-// phone
-// : 
-// "4734274634"
-// profile_picture
-// : 
-// "https://test.negbuy.com/media/profile_images/test.jpg"
-// verified
-// : 
-// true
- }
+   
+   city?:string
+   first_name?:string
+   last_name?:string
+   phone?:string
+   profile_picture?:string
+   verified?:string
+   }

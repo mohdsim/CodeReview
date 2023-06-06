@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import {MatButtonModule} from '@angular/material/button';
+
 //  import {MatButt
   //MatButtonModule,
 //         MatNativeDateModule,
@@ -15,6 +15,8 @@ import {MatButtonModule} from '@angular/material/button';
 //         MatSidenavModule,
 //         MatListModule,
 //         MatToolbarModule
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
     //   } 
     //  from '@angular/material';
      import {MatToolbarModule} from '@angular/material/toolbar';
@@ -30,6 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ApiTestComponent } from './api-test/api-test.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ClobleFormComponent } from './cloble-form/cloble-form.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DateComponent } from './date/date.component';
 
 
 @NgModule({
@@ -40,7 +44,9 @@ import { ClobleFormComponent } from './cloble-form/cloble-form.component';
     NavigationComponent,
     FormComponent,
     ApiTestComponent,
-    ClobleFormComponent
+    ClobleFormComponent,
+    DashboardComponent,
+    DateComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +56,7 @@ import { ClobleFormComponent } from './cloble-form/cloble-form.component';
     MaterialModule,
     ReactiveFormsModule,
      HttpClientModule,
+    
    
   ],
   providers: [],
