@@ -7,6 +7,7 @@ import { FormComponent } from './form/form.component';
 import { ApiTestComponent } from './api-test/api-test.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DateComponent } from './date/date.component';
+import { GlobleTableComponent } from './globle-table/globle-table.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path:'dashboard',component:DashboardComponent
+  },
+  {
+    path:'globleTableData',component:GlobleTableComponent
   },
   {
     path:'reactiveForm',component:FormComponent

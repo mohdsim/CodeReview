@@ -1,0 +1,31 @@
+
+.primary, .danger, .warn {
+    padding: 1rem 2rem 1rem 2rem;
+    min-width: 12rem;
+    height: auto;
+    margin: 1rem;
+    color: #fff !important;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .primary:hover, .danger:hover, .warn:hover {
+    opacity: 0.7;
+  }
+  
+  .primary {
+    background-color: #071779;
+    border-radius:200px;
+  }
+  
+  .danger {
+    background-color: green;
+    border-radius:200px;
+    width:373px;
+  }
+  
+  .warn {
+    background-color: red;
+    border-radius:200px;
+  }
+  

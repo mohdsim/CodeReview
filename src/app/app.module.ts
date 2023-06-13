@@ -34,6 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClobleFormComponent } from './cloble-form/cloble-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DateComponent } from './date/date.component';
+import { GlobleTableComponent } from './globle-table/globle-table.component';
+import { CoreModuleRoutingModule } from './commanFolder/core-module/core-module-routing.module';
+import { CoreModuleModule } from './commanFolder/core-module/core-module.module';
 
 
 @NgModule({
@@ -46,7 +49,8 @@ import { DateComponent } from './date/date.component';
     ApiTestComponent,
     ClobleFormComponent,
     DashboardComponent,
-    DateComponent
+    DateComponent,
+    GlobleTableComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +60,7 @@ import { DateComponent } from './date/date.component';
     MaterialModule,
     ReactiveFormsModule,
      HttpClientModule,
+     CoreModuleModule
     
    
   ],

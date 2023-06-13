@@ -17,36 +17,37 @@ export class ApiTestComponent implements OnInit {
     email: null,
     mob: null,
     cont: null
- }
+  }
   onj: any
   res: any
-  
+
   apiRes$: Observable<sellerApiResp[]>
- 
+
 
 
 
   constructor(private http: HttpClient) {
-   this.apiRes$ = this.res
+    this.apiRes$ = this.res
   }
 
   ngOnInit(): void {
-      //import { of, map } from 'rxjs';
+    //import { of, map } from 'rxjs';
 
- of(7, 13, 3)
-  .pipe(
-     map((v) => {
-      let a =v + v 
-      console.log("map val",a)
-      return a
-          }),
-        
-          tap((b)=>{console.log("tap val",b)}),
-          
-    
-   
-  ).subscribe((item)=>{console.log("item",item);
-  })
+    of(7, 13, 3)
+      .pipe(
+        map((v) => {
+          let a = v + v
+          console.log("map val", a)
+          return a
+        }),
+
+        tap((b) => { console.log("tap val", b) }),
+
+
+
+      ).subscribe((item) => {
+        console.log("item", item);
+      })
 
 
 
@@ -71,5 +72,5 @@ export class ApiTestComponent implements OnInit {
 
 
 
- 
+
 }
