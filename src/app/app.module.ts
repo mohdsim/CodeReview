@@ -30,13 +30,16 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ApiTestComponent } from './api-test/api-test.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { ClobleFormComponent } from './cloble-form/cloble-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DateComponent } from './date/date.component';
 import { GlobleTableComponent } from './globle-table/globle-table.component';
 import { CoreModuleRoutingModule } from './commanFolder/core-module/core-module-routing.module';
 import { CoreModuleModule } from './commanFolder/core-module/core-module.module';
+import { TestInterceptor } from './test.interceptor';
+import { NgHttpLoaderModule } from 'ng-http-loader';
+//import { NgHttpLoaderModule } from 'ng-http-loader'
 
 
 @NgModule({
@@ -60,11 +63,16 @@ import { CoreModuleModule } from './commanFolder/core-module/core-module.module'
     MaterialModule,
     ReactiveFormsModule,
      HttpClientModule,
-     CoreModuleModule
+     CoreModuleModule,
+     NgHttpLoaderModule.forRoot()
     
    
   ],
-  providers: [],
+  providers: [{ 
+    provide: HTTP_INTERCEPTORS,useClass:TestInterceptor,multi:true
+  }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }
