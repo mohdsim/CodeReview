@@ -8,6 +8,7 @@ import { ApiTestComponent } from './api-test/api-test.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DateComponent } from './date/date.component';
 import { GlobleTableComponent } from './globle-table/globle-table.component';
+import { AuthmGuard } from './authm.guard';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
     path:'formatdate',component:DateComponent
   },
   {
-    path:'dashboard',component:DashboardComponent
+    path:'dashboard',component:DashboardComponent,canActivate:[AuthmGuard]
   },
   {
     path:'globleTableData',component:GlobleTableComponent

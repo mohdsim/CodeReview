@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { error } from 'console';
 import { timeout } from 'rxjs';
+import { of, interval } from 'rxjs';
+import { mergeMap, map, filter } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-root',
@@ -20,7 +23,35 @@ export class AppComponent {
 
   constructor(private http: HttpClient) { }
   ngOnInit() {
-   this.myLoderFunc()
+    const val = of(1,2,3,4,5,6,7)
+    val.pipe(
+      // filter((i)=>{ return i == 50}),
+      map((x:any)=>{ return x*10},
+     
+
+    ))
+   .subscribe((i)=>{console.log(i)})
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
     
   }
 
