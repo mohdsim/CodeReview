@@ -25,7 +25,7 @@ export class AppComponent {
   }
 
   myLoderFunc() {
-     return this.http.get<any>('https://jsonplaceholder.typicode.com/posts').pipe(timeout(1000),)
+     return this.http.get<any>('https://jsonplaceholder.typicode.com/posts')
      .subscribe(res=>console.log(res))
   }
 }
