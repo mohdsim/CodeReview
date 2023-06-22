@@ -4,7 +4,7 @@
 
 
 <p>comman Button</p>
-<!-- <app-button></app-button> -->
+
 
 <app-globle-table 
 (actions)="actions()"
@@ -15,3 +15,29 @@
 </app-globle-table>
 <!-- (action)="onTableAction($event)"
 [dataset]="data"  -->
+
+<h1>Multiple file Uplode</h1>
+<app-multi-file-uplode></app-multi-file-uplode>
+<h1>Dynamic Control Practise</h1>
+
+<form [formGroup]="myForm">
+    <div  formArrayName="auther">
+        <ng-container class="dynamicControl"   *ngFor="let auth of auther.controls; let i=index ">
+            <input type="text" formControlName="{i}"/>
+            <button mat-raised-button color="primary"  >
+                 <!-- (click)="removeAuther(i)" -->
+                Remove Auther
+              </button>
+        </ng-container>
+        <div>
+            <button mat-raised-button color="primary" (click)="addMore()" >
+                <!-- (click)="removeAuther(i)" -->
+               Add Skiles
+             </button>
+        </div>
+        
+       
+        
+    
+    </div>
+</form>

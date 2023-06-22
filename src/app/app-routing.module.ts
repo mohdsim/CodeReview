@@ -9,10 +9,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DateComponent } from './date/date.component';
 import { GlobleTableComponent } from './globle-table/globle-table.component';
 import { AuthmGuard } from './authm.guard';
+import { MultiFileUplodeComponent } from './multi-file-uplode/multi-file-uplode.component';
 
 const routes: Routes = [
   {
     path:'navigation',component:NavigationComponent
+  },
+  {
+    path:'fileUplode',component:MultiFileUplodeComponent
   },
   {
     path:'formatdate',component:DateComponent

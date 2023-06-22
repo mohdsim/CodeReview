@@ -1,0 +1,13 @@
+
+
+<!-- <hello name="{{ name }}"></hello> -->
+<p>Start editing to see some magic happen :</p>
+
+<div *ngFor="let url of urls; index as j">
+    <img src="assets\edit.png" height="15" width="15px" />
+    <img [src]="url" height="200" width="200px" /> 
+    <img src="assets\cross.png" height="15" width="15px" (click)="deleteImage(j)" /> 
+</div>
+
+
+<input type="file" (change)="onSelectFile($event)" multiple />

@@ -39,6 +39,7 @@ import { CoreModuleRoutingModule } from './commanFolder/core-module/core-module-
 import { CoreModuleModule } from './commanFolder/core-module/core-module.module';
 import { TestInterceptor } from './test.interceptor';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { MultiFileUplodeComponent } from './multi-file-uplode/multi-file-uplode.component';
 //import { NgHttpLoaderModule } from 'ng-http-loader'
 
 
@@ -53,7 +54,8 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     ClobleFormComponent,
     DashboardComponent,
     DateComponent,
-    GlobleTableComponent
+    GlobleTableComponent,
+    MultiFileUplodeComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatSnackBar, MatSnackBarRef, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
-import {FormsModule} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import * as moment from 'moment';
@@ -16,6 +16,7 @@ import * as moment from 'moment';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+	myForm:any
 	
 	columns:any=[]
 	data:any[]=[]
@@ -24,7 +25,7 @@ export class DashboardComponent implements OnInit {
 
   
 
-  constructor(private snackBar: MatSnackBar) {
+  constructor(private snackBar: MatSnackBar,private fb:FormBuilder) {
 	this.columns=['name', 'weight', 'symbol', 'position']
 	this.data=[	
 	{position: 1, name: 'Hydrogen', lastN:'gen',age:'14', weight: 1.0079, symbol: 'H'},
@@ -57,6 +58,15 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit():void {
+	this.myForm= this.fb.group({
+		abc:[],
+		auther:this.fb.array([
+			this.getAutherControl()
+
+		])
+
+	})
+	
 	
 //const moment = require('moment');
 
@@ -89,6 +99,24 @@ console.log(
                                                 
 
 }
+private getAutherControl():FormGroup{
+	return this.fb.group({
+		first_Name:'',
+		
+	})
+
+}
+public get auther(){
+    return <FormArray>this.myForm.get('auther')
+  }
+  addMore(){
+    this.auther.push(this.getAutherControl())
+  }
+// private getAutherControl():FormGroup {
+//     return this.formBuilder.group({
+//        fulltName:''
+//      })
+//   }
 myFunc(){
 	console.log("hi i am")
 }

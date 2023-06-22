@@ -15,30 +15,20 @@ export class FormComponent implements OnInit {
     this.myForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      mob: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(10),
-          Validators.maxLength(10),
+      mob: [ '',[Validators.required,Validators.minLength(10),Validators.maxLength(10),
         ],
       ],
       // landLine: this.formBuilder.array({
       //   this.formBuilder.control()
       // })
-      address: this.formBuilder.group({
-        address1:[''],
-        address2:[''],
-        address3:['']
-      }),
+      // address: this.formBuilder.group({
+      //   address1:[''],
+      //   address2:[''],
+      //   address3:['']
+      // }),
       auther:this.formBuilder.array([
         this.getAutherControl()
       ])
-    
-      // gender: ['', [Validators.required]],
-      // Dob: ['', [Validators.required]],
-      // country: ['', [Validators.required]],
-      // agree: ['', [Validators.required]],
     });
     
     
@@ -60,7 +50,7 @@ export class FormComponent implements OnInit {
 
 
 
-  openForm() {
+ // openForm() {
     
 
     // this.myForm.patchValue({
@@ -77,19 +67,14 @@ export class FormComponent implements OnInit {
     // this.submitBtn = true;
     // this.updateBtn = false;
     // this.submitBtn = true
-  }
+ // }
   
   submitForm() {
     this.submitt = true;
      console.log(this.myForm.value)
     if (this.myForm.valid) {
-      // console.log(this.myForm.value);
       this.submitt = true;
-      // this.dataSource.push(this.myForm.value);
-      // this.myTable = true;
-      // this.todoInputField = false;
     }
-    // **************
     else {
       console.log('i am in else part ', this.myForm);
       let key = Object.keys(this.myForm.controls);
