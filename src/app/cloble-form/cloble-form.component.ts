@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { CentralizService } from '../core/centraliz.service';
+//import { CentralizService } from '../core/centraliz.service';
 
 @Component({
   selector: 'app-cloble-form',
@@ -13,7 +13,9 @@ export class ClobleFormComponent implements OnInit {
     DesizeredControl={} as any
   @Input() receivedControl?:any
 
-  constructor( private fb:FormBuilder , private _centralizService:CentralizService) { }
+  constructor( private fb:FormBuilder ,
+    // private _centralizService:CentralizService
+     ) { }
   ngOnChanges(){
     console.log("hi")
   }
@@ -22,7 +24,7 @@ export class ClobleFormComponent implements OnInit {
     this.dynamicForm()
    console.log(this.receivedControl)
    console.log(" this.myForm.value", this.myForm.value)
-   this._centralizService.formVal.subscribe((item)=>{console.log("formVal",item)})
+  // this._centralizService.formVal.subscribe((item)=>{console.log("formVal",item)})
   }
     dynamicForm(){
       this.objectKey =Object.keys(this.receivedControl)
@@ -38,6 +40,6 @@ export class ClobleFormComponent implements OnInit {
 
     submit(){
      console.log("Input Value", this.myForm.value)
-     this._centralizService.formVal.next(this.myForm.value)
+    // this._centralizService.formVal.next(this.myForm.value)
     }
 }
