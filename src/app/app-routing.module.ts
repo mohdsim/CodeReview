@@ -10,6 +10,7 @@ import { DateComponent } from './date/date.component';
 import { GlobleTableComponent } from './globle-table/globle-table.component';
 import { AuthmGuard } from './authm.guard';
 import { MultiFileUplodeComponent } from './multi-file-uplode/multi-file-uplode.component';
+import { SentMailComponent } from './sent-mail/sent-mail.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,9 @@ const routes: Routes = [
   },
   {
     path:'formatdate',component:DateComponent
+  },
+  {
+    path:'mailComponent',component:SentMailComponent
   },
   {
     path:'dashboard',component:DashboardComponent,canActivate:[AuthmGuard]

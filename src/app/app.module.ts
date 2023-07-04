@@ -40,6 +40,7 @@ import { CoreModuleModule } from './commanFolder/core-module/core-module.module'
 import { TestInterceptor } from './test.interceptor';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { MultiFileUplodeComponent } from './multi-file-uplode/multi-file-uplode.component';
+import { SentMailComponent } from './sent-mail/sent-mail.component';
 //import { NgHttpLoaderModule } from 'ng-http-loader'
 
 
@@ -55,7 +56,8 @@ import { MultiFileUplodeComponent } from './multi-file-uplode/multi-file-uplode.
     DashboardComponent,
     DateComponent,
     GlobleTableComponent,
-    MultiFileUplodeComponent
+    MultiFileUplodeComponent,
+    SentMailComponent
   ],
   imports: [
     BrowserModule,
