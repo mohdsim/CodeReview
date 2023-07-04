@@ -52,7 +52,7 @@ import { SentMailComponent } from './sent-mail/sent-mail.component';
     NavigationComponent,
     FormComponent,
     ApiTestComponent,
-    ClobleFormComponent,
+   // ClobleFormComponent,
     DashboardComponent,
     DateComponent,
     GlobleTableComponent,
