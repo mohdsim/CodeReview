@@ -28,9 +28,9 @@ const routes: Routes = [
   {
     path:'dashboard',component:DashboardComponent,canActivate:[AuthmGuard]
   },
-  {
-    path:'globleTableData',component:GlobleTableComponent
-  },
+  // {
+  //   path:'globleTableData',component:GlobleTableComponent
+  // },
   {
     path:'reactiveForm',component:FormComponent
   },
@@ -39,6 +39,9 @@ const routes: Routes = [
   },
   {
     path:'apiTest',component:ApiTestComponent
+  },
+  {
+    path:'share',loadChildren:()=>import('./shared/shared.module').then((m)=>m.SharedModule)
   },
  
   //  { path: '', component: FirstComponent, data: { title: 'First Component' } },

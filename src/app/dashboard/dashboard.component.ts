@@ -7,6 +7,11 @@ import {FormArray, FormBuilder, FormGroup, FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import * as moment from 'moment';
+import { MatCardTitleGroup } from '@angular/material/card';
+enum Days{
+	Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
+
+}
 
 //import 'moment/locale/pt-br';
 
@@ -18,16 +23,10 @@ import * as moment from 'moment';
 export class DashboardComponent implements OnInit {
 	myForm:any
 	
-	columns:any=[]
-	data:any[]=[]
-	
-
-
-  
-
-  constructor(private snackBar: MatSnackBar,private fb:FormBuilder) {
-	this.columns=['name', 'weight', 'symbol', 'position']
-	this.data=[	
+	// columns:any=[]
+	// data:any[]=[]
+	columns=['name', 'weight', 'symbol', 'position']
+	data=[	
 	{position: 1, name: 'Hydrogen', lastN:'gen',age:'14', weight: 1.0079, symbol: 'H'},
 	{position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
 	{position: 3, name: 'Aht', lastN:'gen',age:'14', weight: 1.0079, symbol: 'H'},
@@ -55,10 +54,17 @@ export class DashboardComponent implements OnInit {
 	
 ]
 	
+	
+
+
+  
+
+  constructor(private snackBar: MatSnackBar,private fb:FormBuilder) {
+	
   }
 
   ngOnInit():void {
-	this.myForm= this.fb.group({
+  this.myForm= this.fb.group({
 		abc:[],
 		auther:this.fb.array([
 			this.getAutherControl()
@@ -67,34 +73,34 @@ export class DashboardComponent implements OnInit {
 
 	})
 	
-	
+	//****************************************
 //const moment = require('moment');
 
-let nowMoment = moment.utc();
+// let nowMoment = moment.utc();
 
-console.log(
-	"Current Moment is:", nowMoment.toString()
-)
-console.log(
-	"Current Hours:", nowMoment.hours()
-)
-console.log(
-	"Current Minutes:", nowMoment.minutes()
-)
+// console.log(
+// 	"Current Moment is:", nowMoment.toString()
+// )
+// console.log(
+// 	"Current Hours:", nowMoment.hours()
+// )
+// console.log(
+// 	"Current Minutes:", nowMoment.minutes()
+// )
 
 // Set the Time to display in the local timezone
-nowMoment.local()
+// nowMoment.local()
 
-console.log(
-	"Current Moment is:", nowMoment.toString()
-)
-console.log(
-	"Current Hours:", nowMoment.hours()
-)
-console.log(
-	"Current Minutes:", nowMoment.minutes()
-)
-
+// console.log(
+// 	"Current Moment is:", nowMoment.toString()
+// )
+// console.log(
+// 	"Current Hours:", nowMoment.hours()
+// )
+// console.log(
+// 	"Current Minutes:", nowMoment.minutes()
+// )
+//****************************************************
 
                                                 
 
@@ -122,6 +128,11 @@ myFunc(){
 }
 actions(){
 	console.log("hi i am Dynamic event")
+
+}
+receiveData(ev:any){
+	console.log(ev);
+	alert("hi")
 
 }
 

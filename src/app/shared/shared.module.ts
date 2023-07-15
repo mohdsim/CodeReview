@@ -8,19 +8,29 @@ import { GlobleActionButtonComponent } from './comman-component/globle-action-bu
 import { GlobleFieldErrorComponent } from './comman-component/globle-field-error/globle-field-error.component';
 import { GlobleTableComponent } from './comman-component/globle-table/globle-table.component';
 import { MaterialModule } from '../material/material.module';
+import { PrintComponent } from './comman-component/print/print.component';
+const components=[
+  GlobleTableComponent,
+  GlobleActionButtonComponent,
+  PrintComponent
+
+]
 
 @NgModule({
   declarations: [
+    ...components,
     DigitOnlyDirective,
     TwoDigitCommanDirective,
     GlobleActionButtonComponent,
     GlobleFieldErrorComponent,
-    GlobleTableComponent
+    GlobleTableComponent,
+    
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
     MaterialModule
-  ]
+  ],
+  exports:[  ...components]
 })
 export class SharedModule { }

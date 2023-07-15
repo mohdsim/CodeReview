@@ -24,9 +24,8 @@ import {MatSort, Sort} from '@angular/material/sort';
 export class GlobleTableComponent implements OnInit {
   @ViewChild('empTbSort') empTbSort !: MatSort;
   @ViewChild('paginator') paginator !:MatPaginator;
-  @Input() columns:any;
- 
-  @Input() dataset:any []= []
+  @Input() columns:any; //Table  Header
+  @Input() dataset:any []= [] //Table  data
   @Input() tableFormat:any []=[]
   dataSource :MatTableDataSource<any> = new MatTableDataSource;
   @Output() actions:EventEmitter<any> = new EventEmitter<any>()

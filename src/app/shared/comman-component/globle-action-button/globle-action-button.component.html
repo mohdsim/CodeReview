@@ -1,2 +1,4 @@
 <p>globle-action-button works!</p>
-<button mat-raised-button color="primary">Primary</button>
+<button mat-raised-button (click)="performAction()" color="primary"
+ [ngClass]="buttonSize ? buttonSize: 'large-button' "
+>{{btnTitle}}</button>

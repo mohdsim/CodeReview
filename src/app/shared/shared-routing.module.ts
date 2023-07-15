@@ -1,7 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GlobleTableComponent } from '../globle-table/globle-table.component';
+import { PrintComponent } from './comman-component/print/print.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'globleTableData',component:GlobleTableComponent
+  },
+  {
+    path:'print',component:PrintComponent
+  },
+  {
+    path:'',component:GlobleTableComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

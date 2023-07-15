@@ -1,0 +1,21 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.medium-button{
+    background: green;
+    color: white;
+    font-size: 14px;
+    font-weight:bold;
+
+}
+.large-button{
+    background: red;
+    color: white;
+    font-size: 14px;
+    font-weight:bold;
+    
+}
