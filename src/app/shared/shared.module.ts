@@ -9,6 +9,8 @@ import { GlobleFieldErrorComponent } from './comman-component/globle-field-error
 import { GlobleTableComponent } from './comman-component/globle-table/globle-table.component';
 import { MaterialModule } from '../material/material.module';
 import { PrintComponent } from './comman-component/print/print.component';
+import { ImplementSignalComponent } from './comman-component/implement-signal/implement-signal.component';
+import { InputFieldComponent } from './comman-component/input-field/input-field.component';
 const components=[
   GlobleTableComponent,
   GlobleActionButtonComponent,
@@ -24,6 +26,8 @@ const components=[
     GlobleActionButtonComponent,
     GlobleFieldErrorComponent,
     GlobleTableComponent,
+    ImplementSignalComponent,
+    InputFieldComponent,
     
   ],
   imports: [

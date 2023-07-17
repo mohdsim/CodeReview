@@ -30,10 +30,8 @@ import { SharedModule } from './shared/shared.module';
     NavigationComponent,
     FormComponent,
     ApiTestComponent,
-    // ClobleFormComponent,
     DashboardComponent,
     DateComponent,
-   // GlobleTableComponent,
     MultiFileUplodeComponent,
     SentMailComponent
   ],
