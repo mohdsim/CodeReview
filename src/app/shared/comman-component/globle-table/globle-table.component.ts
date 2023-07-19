@@ -20,12 +20,16 @@ import {MatSort, Sort} from '@angular/material/sort';
 export class GlobleTableComponent implements OnInit {
   @ViewChild('empTbSort') empTbSort !: MatSort;
   @ViewChild('paginator') paginator !:MatPaginator;
+  @Input() isMenu:boolean=false
+  @Input() menuOption:string[]=['menuname?']
+  @Input() menuColumnId:string=''
   @Input() columns:any;
- 
   @Input() dataset:any []= []
   @Input() tableFormat:any []=[]
+ 
   dataSource :MatTableDataSource<any> = new MatTableDataSource;
-  @Output() actions:EventEmitter<any> = new EventEmitter<any>()
+  @Output() tableActions:EventEmitter<any> = new EventEmitter<any>()
+  @Output() tableRowActions:EventEmitter<any> = new EventEmitter<any>()
  // @Output() menuAction: EventEmitter = new EventEmitter
   displayedColumns:any
   columnsToDisplay:any;
@@ -43,10 +47,10 @@ export class GlobleTableComponent implements OnInit {
   ngOnInit(): void {
     this.displayedColumns=this.columns
     this.columnsToDisplay=this.columns;
-   // this.dataSource=this.dataset
     this.dataSource= new MatTableDataSource(this.dataset)
     console.log("this.displayedColumns",this.displayedColumns)
     console.log(" this.columnsToDisplay",this.columnsToDisplay)
+    console.log("this.dataset",this.dataset)
     
       // set checkbox columny
      
@@ -63,11 +67,16 @@ export class GlobleTableComponent implements OnInit {
      // this.dataSource.paginator = this.paginator;
    
   }
+  handleOnAction(){
+    this.tableActions.emit()
+  }
+  handleOnTableRowAction(){
+    this.tableRowActions.emit()
+  }
   search(event:any){
     this.dataSource.filter = event.target.value.trim().toLowerCase();
   }
   ngAfterViewInit() {    
-    // this.dataSource.sort = this.empTbSort;
     this.dataSource.sort = this.empTbSort;
     this.dataSource.paginator = this.paginator;
 }

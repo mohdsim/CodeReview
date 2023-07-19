@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GlobleTableComponent } from './globle-table.component';
+import { ActionButtonComponent } from './action-button.component';
 
-describe('GlobleTableComponent', () => {
-  let component: GlobleTableComponent;
-  let fixture: ComponentFixture<GlobleTableComponent>;
+describe('ActionButtonComponent', () => {
+  let component: ActionButtonComponent;
+  let fixture: ComponentFixture<ActionButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GlobleTableComponent ]
+      declarations: [ ActionButtonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GlobleTableComponent);
+    fixture = TestBed.createComponent(ActionButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

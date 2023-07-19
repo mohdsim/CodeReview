@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FirstComponent } from './first/first.component';
-import { SecondComponent } from './second/second.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FormComponent } from './form/form.component';
 import { ApiTestComponent } from './api-test/api-test.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DateComponent } from './date/date.component';
-import { GlobleTableComponent } from './globle-table/globle-table.component';
 import { AuthmGuard } from './authm.guard';
 import { MultiFileUplodeComponent } from './multi-file-uplode/multi-file-uplode.component';
 import { SentMailComponent } from './sent-mail/sent-mail.component';
@@ -28,9 +26,6 @@ const routes: Routes = [
   {
     path:'dashboard',component:DashboardComponent,canActivate:[AuthmGuard]
   },
-  // {
-  //   path:'globleTableData',component:GlobleTableComponent
-  // },
   {
     path:'reactiveForm',component:FormComponent
   },

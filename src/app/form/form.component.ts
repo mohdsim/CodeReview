@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonService } from '../core/services/common.service';
 // import { FormArrays } from '@angular/forms';
 @Component({
   selector: 'app-form',
@@ -9,7 +10,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormComponent implements OnInit {
   myForm:any
   submitt: boolean=false;
-  constructor( private formBuilder:FormBuilder) { }
+  constructor( private formBuilder:FormBuilder,private _commanService:CommonService) { }
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
@@ -76,6 +77,8 @@ export class FormComponent implements OnInit {
       this.submitt = true;
     }
     else {
+      this._commanService.showSnackbar('Please fill all the required filelds', null, 3000);
+     // this._commanService.showSnackbar()
       console.log('i am in else part ', this.myForm);
       let key = Object.keys(this.myForm.controls);
       console.log('The value of key :', key);

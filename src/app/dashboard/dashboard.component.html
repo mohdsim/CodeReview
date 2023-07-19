@@ -1,34 +1,24 @@
 <p>dashboard works!</p>
 <app-globle-table 
-(actions)="actions()"
+(tableActions)="actions()"
+(tableRowActions)="actionOntableRow()"
 [dataset]="data"
 [columns]="columns"
+[isMenu]="true"
+[menuOption]="desizeredMenuOption"
+[menuColumnId]="'symbol'"
 >
+<!--  -->
 
 </app-globle-table>
-<app-globle-action-button 
+<app-action-button 
 (ClickMe)="receiveData($event)"
- btnTitle="I am Globle Button" buttonSize="medium-button">
-</app-globle-action-button>
+ btnTitle="I am  Button" buttonSize="medium-button">
+</app-action-button>
 
 <h1>Commann  Practise here</h1>
-
-
-<p>comman Button</p>
-
-
-<!-- <app-globle-table 
-(actions)="actions()"
-[dataset]="data"
-[columns]="columns"
-
->
-</app-globle-table> -->
-
-<!-- (action)="onTableAction($event)"
-[dataset]="data"  -->
-
-<h1>Multiple file Uplode</h1>
+ <p>comman Button</p>
+ <h1>Multiple file Uplode</h1>
 <app-multi-file-uplode></app-multi-file-uplode>
 <h1>Dynamic Control Practise</h1>
 

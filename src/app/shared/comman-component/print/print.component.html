@@ -21,11 +21,12 @@
 
 <!-- <button (click)="exportPDF()">exportPDF</button> -->
 <app-implement-signal></app-implement-signal>
-
+<input appTwoDigitComman/>
 <app-input-field
    [mandetory]="true"
    fieldLabel="Check fieldLabel"
    placeholder="Check placeholder"
+   [onlyDigit]="true"
 ></app-input-field>
 
     

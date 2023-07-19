@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 import * as moment from 'moment';
 import { MatCardTitleGroup } from '@angular/material/card';
+import { Router } from '@angular/router';
 enum Days{
 	Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
 
@@ -25,9 +26,10 @@ export class DashboardComponent implements OnInit {
 	
 	// columns:any=[]
 	// data:any[]=[]
+	desizeredMenuOption=['check1','check2','check3','check4']
 	columns=['name', 'weight', 'symbol', 'position']
 	data=[	
-	{position: 1, name: 'Hydrogen', lastN:'gen',age:'14', weight: 1.0079, symbol: 'H'},
+	{position: 1, name: 'Hydrogen', lastN:'gen',age:'14', weight: 1.0079, symbol: 'H',id:1},
 	{position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
 	{position: 3, name: 'Aht', lastN:'gen',age:'14', weight: 1.0079, symbol: 'H'},
 	{position: 4, name: 'Bcd', weight: 4.0026, symbol: 'He'},
@@ -59,7 +61,10 @@ export class DashboardComponent implements OnInit {
 
   
 
-  constructor(private snackBar: MatSnackBar,private fb:FormBuilder) {
+  constructor(private snackBar: MatSnackBar,
+	          private fb:FormBuilder,
+			  private router:Router
+			  ) {
 	
   }
 
@@ -67,7 +72,7 @@ export class DashboardComponent implements OnInit {
   this.myForm= this.fb.group({
 		abc:[],
 		auther:this.fb.array([
-			this.getAutherControl()
+		this.getAutherControl()
 
 		])
 
@@ -127,8 +132,12 @@ myFunc(){
 	console.log("hi i am")
 }
 actions(){
-	console.log("hi i am Dynamic event")
+	this.router.navigateByUrl('reactiveForm')
+	
 
+}
+actionOntableRow(){
+	console.log("i am action On Row");
 }
 receiveData(ev:any){
 	console.log(ev);
