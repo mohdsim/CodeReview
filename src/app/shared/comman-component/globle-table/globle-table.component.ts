@@ -30,17 +30,9 @@ export class GlobleTableComponent implements OnInit {
   dataSource :MatTableDataSource<any> = new MatTableDataSource;
   @Output() tableActions:EventEmitter<any> = new EventEmitter<any>()
   @Output() tableRowActions:EventEmitter<any> = new EventEmitter<any>()
- // @Output() menuAction: EventEmitter = new EventEmitter
   displayedColumns:any
   columnsToDisplay:any;
   status: any;
- // dataSource:any=[]
-  
-  
- 
-  
- 
-
   constructor() { 
    
   }
