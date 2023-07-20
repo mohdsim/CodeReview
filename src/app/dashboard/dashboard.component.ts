@@ -27,8 +27,13 @@ export class DashboardComponent implements OnInit {
 	// columns:any=[]
 	// data:any[]=[]
 	desizeredMenuOption=['check1','check2','check3','check4']
-	columns=['name', 'weight', 'symbol', 'position']
+	// columns=['name', 'weight', 'symbol', 'position']
+	columns=['name', 'weight', 'symbol', 'status']
 	data=[	
+		// {name: 'Hydrogen', weight: 1.0079, symbol: 'H', status:true, id:1},
+		// {name: 'Hydrogen', weight: 1.0079, symbol: 'H', status:false, id:10},
+		// {name: 'Hydrogen', weight: 1.0079, symbol: 'H', status:true, id:11},
+		// {name: 'Hydrogen', weight: 1.0079, symbol: 'H', status:false, id:12},
 	{position: 1, name: 'Hydrogen', lastN:'gen',age:'14', weight: 1.0079, symbol: 'H',id:1},
 	{position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
 	{position: 3, name: 'Aht', lastN:'gen',age:'14', weight: 1.0079, symbol: 'H'},

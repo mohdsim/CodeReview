@@ -1,62 +1,61 @@
 <p> From Share Module globle-table works! </p>
 <div>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Search" (keyup)="search($event)">
-    </mat-form-field>
-  </div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Search" (keyup)="search($event)">
+  </mat-form-field>
+</div>
 
-  
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
-    <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+    
       <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-transform: capitalize;">{{column}} </th>
-      <td mat-cell *matCellDef="let element"> {{element[column]}}
-        <!-- Desizered Menu Or Not -->
-        <ng-container *ngIf="isMenu">
-          
-          <!-- <ng-container  *ngIf="column ==='name'"> -->
-            <ng-container  *ngIf="column === menuColumnId">
-            <button  mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" >
-              <button mat-menu-item *ngFor="let i of menuOption">
-                <span (click)="handleOnAction()">{{i}}</span>
-              </button>
-              </mat-menu>
-          </ng-container>
+    
+    <!-- <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-transform: capitalize;">{{column}} </th> -->
+    <td mat-cell *matCellDef="let element"> {{element[column]}}
+      <!-- Desizered Menu Or Not -->
+      <ng-container *ngIf="isMenu">
 
-        </ng-container>
-      
-     
-      <!-- <div *ngIf="element[column]=='name'>
-        <span>
+        <!-- <ng-container  *ngIf="column ==='name'"> -->
+        <ng-container *ngIf="column === menuColumnId">
           <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <mat-icon>dialpad</mat-icon>
-              <span (click)="actions.emit()">Redial</span>
-            </button>
-            <button mat-menu-item disabled>
-              <mat-icon>voicemail</mat-icon>
-              <span>Check voice mail</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>notifications_off</mat-icon>
-              <span>Disable alerts</span>
+            <button mat-menu-item *ngFor="let i of menuOption">
+              <span (click)="handleOnAction()">{{i}}</span>
             </button>
           </mat-menu>
-        </span> 
-      </div> -->
-      
-      </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-    <tr mat-row *matRowDef="let row; columns:columnsToDisplay;" (click)="handleOnTableRowAction()"></tr>
-  </table>
-  <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-  
-  <!-- table pagination -->
-  <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
+        </ng-container>
+
+      </ng-container>
+      <ng-container *ngIf="column ==='status'">
+        <span>
+            <div *ngIf="element.column == status" class="green_circle"></div>
+        </span>
+        <span *ngIf="element.column == !status">
+          <div class="red_circle"></div>
+        </span>
+       
+        
+        <!-- <span [ngClass]="(element.column == status) ? 'green_circle':'red_circle'">
+          Check Status
+        </span> -->
+      </ng-container>
+
+
+
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns:columnsToDisplay;" (click)="handleOnTableRowAction()"></tr>
+</table>
+<mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+<!-- table pagination -->
+<!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
+<!-- ******************************************************************************************************************** -->
+

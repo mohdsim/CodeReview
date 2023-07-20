@@ -33,6 +33,7 @@ export class GlobleTableComponent implements OnInit {
  // @Output() menuAction: EventEmitter = new EventEmitter
   displayedColumns:any
   columnsToDisplay:any;
+  status: any;
  // dataSource:any=[]
   
   
