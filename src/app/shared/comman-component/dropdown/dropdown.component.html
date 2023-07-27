@@ -1,0 +1,16 @@
+<p>dropdown works!</p>
+
+
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+       
+      <!-- formControlName="myType" -->
+      <mat-select   (selectionChange)="onSelect($event.value)" [value]="inputValue" >
+        <mat-option *ngFor="let item of Options; let i=index" [value]="item">
+          {{item}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>

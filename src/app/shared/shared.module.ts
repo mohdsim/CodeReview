@@ -12,10 +12,12 @@ import { PrintComponent } from './comman-component/print/print.component';
 import { ImplementSignalComponent } from './comman-component/implement-signal/implement-signal.component';
 import { InputFieldComponent } from './comman-component/input-field/input-field.component';
 import { ActionButtonComponent } from './comman-component/action-button/action-button.component';
+import { DropdownComponent } from './comman-component/dropdown/dropdown.component';
 const components=[
   GlobleTableComponent,
   PrintComponent,
   ActionButtonComponent,
+  DropdownComponent,
 
 ]
 
@@ -29,6 +31,7 @@ const components=[
     GlobleTableComponent,
     ImplementSignalComponent,
     InputFieldComponent,
+   
    
     
   ],

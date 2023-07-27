@@ -75,13 +75,14 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit():void {
   this.myForm= this.fb.group({
-		abc:[],
-		auther:this.fb.array([
-		this.getAutherControl()
+		abc:[''],
+		// auther:this.fb.array([
+		// this.getAutherControl()
 
-		])
+		// ])
 
 	})
+	
 	
 	//****************************************
 //const moment = require('moment');
@@ -148,6 +149,10 @@ receiveData(ev:any){
 	console.log(ev);
 	alert("hi")
 
+}
+
+sub(){
+	console.log("valCheck-------->>>>",this.myForm.value)
 }
 
 }

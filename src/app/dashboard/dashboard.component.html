@@ -1,4 +1,5 @@
 <p>dashboard works!</p>
+
 <app-globle-table 
 (tableActions)="actions()"
 (tableRowActions)="actionOntableRow()"
@@ -11,6 +12,14 @@
 <!--  -->
 
 </app-globle-table>
+<h1>Comman Dropdown</h1>
+<form [formGroup]="myForm">
+    <app-dropdown [Options]="desizeredMenuOption" formControlName="abc" ></app-dropdown>
+
+</form>
+
+
+<button (click)="sub()">Cleck Me</button>
 <app-action-button 
 (ClickMe)="receiveData($event)"
  btnTitle="I am  Button" buttonSize="medium-button">

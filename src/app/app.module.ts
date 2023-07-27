@@ -11,7 +11,7 @@ import { MaterialModule } from './material/material.module';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ApiTestComponent } from './api-test/api-test.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DateComponent } from './date/date.component';
 //import { GlobleTableComponent } from './globle-table/globle-table.component';
@@ -20,6 +20,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { MultiFileUplodeComponent } from './multi-file-uplode/multi-file-uplode.component';
 import { SentMailComponent } from './sent-mail/sent-mail.component';
 import { SharedModule } from './shared/shared.module';
+import { PageInterceptor } from './page.interceptor';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { SharedModule } from './shared/shared.module';
 
 
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS, useClass:PageInterceptor ,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
