@@ -13,11 +13,16 @@ import { ImplementSignalComponent } from './comman-component/implement-signal/im
 import { InputFieldComponent } from './comman-component/input-field/input-field.component';
 import { ActionButtonComponent } from './comman-component/action-button/action-button.component';
 import { DropdownComponent } from './comman-component/dropdown/dropdown.component';
+import { DatePickerComponent } from './comman-component/date-picker/date-picker.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
 const components=[
   GlobleTableComponent,
   PrintComponent,
   ActionButtonComponent,
   DropdownComponent,
+  DatePickerComponent,
 
 ]
 
@@ -33,12 +38,16 @@ const components=[
     InputFieldComponent,
    
    
+   
     
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule
   ],
   exports:[  ...components]
 })

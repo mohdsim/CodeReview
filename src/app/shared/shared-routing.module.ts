@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 //import { GlobleTableComponent } from '../globle-table/globle-table.component';
 import { PrintComponent } from './comman-component/print/print.component';
 import { GlobleTableComponent } from './comman-component/globle-table/globle-table.component';
+import { DatePickerComponent } from './comman-component/date-picker/date-picker.component';
 
 const routes: Routes = [
   {
@@ -12,8 +13,11 @@ const routes: Routes = [
     path:'print',component:PrintComponent
   },
   {
-    path:'',component:GlobleTableComponent
-  }
+    path:'datepicker',component:DatePickerComponent
+  },
+  // {
+  //   path:'',component:GlobleTableComponent
+  // }
 ];
 
 @NgModule({

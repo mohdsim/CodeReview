@@ -9,6 +9,7 @@ import { DateComponent } from './date/date.component';
 import { AuthmGuard } from './authm.guard';
 import { MultiFileUplodeComponent } from './multi-file-uplode/multi-file-uplode.component';
 import { SentMailComponent } from './sent-mail/sent-mail.component';
+import { ChartComponent } from './chart/chart.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
   {
     path:'mailComponent',component:SentMailComponent
   },
+  {path:'testgraf',component:ChartComponent},
   {
     path:'dashboard',component:DashboardComponent,canActivate:[AuthmGuard]
   },

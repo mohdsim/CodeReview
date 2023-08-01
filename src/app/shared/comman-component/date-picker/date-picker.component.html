@@ -1,0 +1,77 @@
+<p>date-picker works!</p>
+<!-- *************
+<span class="fieldwrap wd-100">
+    <div class="matfieldwrap">
+      <mat-label>Search by Date</mat-label>
+      <mat-form-field
+        appearance="outline"
+        [floatLabel]="'always'"
+        class="pickerdiv"
+      >
+        <input
+          #effectiveFormRef
+          matInput
+          formControlName="date"
+          (dateChange)="onChangeDate()"
+          [matDatepicker]="formDatePicker"
+          placeholder="DD/MM/YYYY"
+          [min]="minStartDate"
+        />
+        <mat-datepicker-toggle matSuffix [for]="formDatePicker">
+          <mat-icon matDatepickerToggleIcon>
+            <img
+              src="../../../../assets/icons/calender.svg"
+              alt=""
+              width="32"
+            />
+          </mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #formDatePicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <field-errors
+      [formGroup]="scheduleFormGroup"
+      fieldName="date"
+      [getErrorMessage]="getErrorMessage.bind(this)"
+    ></field-errors>
+  </span>
+*************** -->
+
+ <p>
+    <mat-form-field>
+      <mat-label>Completely disabled</mat-label>
+      
+      <input matInput [matDatepicker]="dp1">
+      
+      <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+      <mat-datepicker #dp1></mat-datepicker>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <mat-label>Completely disabled</mat-label>
+      
+      <input matInput [matDatepicker]="dp1">
+      
+      <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+      <mat-datepicker #dp1></mat-datepicker>
+    </mat-form-field>
+  </p> 
+  <!-- <form [formGroup]="myDatePickerForm">
+    
+  
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker1" placeholder="Start Date" formControlName="startDate"/>
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker2" placeholder="End Date" formControlName="endDate"
+     [min]="startDate.value"/>
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+
+</form> -->

@@ -21,6 +21,7 @@ import { MultiFileUplodeComponent } from './multi-file-uplode/multi-file-uplode.
 import { SentMailComponent } from './sent-mail/sent-mail.component';
 import { SharedModule } from './shared/shared.module';
 import { PageInterceptor } from './page.interceptor';
+import { ChartComponent } from './chart/chart.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { PageInterceptor } from './page.interceptor';
     DashboardComponent,
     DateComponent,
     MultiFileUplodeComponent,
-    SentMailComponent
+    SentMailComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
