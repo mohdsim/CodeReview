@@ -5,7 +5,7 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { DigitOnlyDirective } from './directive/digit-only.directive';
 import { TwoDigitCommanDirective } from './directive/two-digit-comman.directive';
 //import { GlobleActionButtonComponent } from './comman-component/globle-action-button/globle-action-button.component';
-import { GlobleFieldErrorComponent } from './comman-component/globle-field-error/globle-field-error.component';
+//import { GlobleFieldErrorComponent } from './comman-component/globle-field-error/globle-field-error.component';
 import { GlobleTableComponent } from './comman-component/globle-table/globle-table.component';
 import { MaterialModule } from '../material/material.module';
 import { PrintComponent } from './comman-component/print/print.component';
@@ -17,12 +17,15 @@ import { DatePickerComponent } from './comman-component/date-picker/date-picker.
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MapComponent } from './comman-component/map/map.component';
+import { FieldErrorsComponent } from './comman-component/field-errors/field-errors.component';
 const components=[
   GlobleTableComponent,
   PrintComponent,
   ActionButtonComponent,
   DropdownComponent,
   DatePickerComponent,
+  FieldErrorsComponent,
 
 ]
 
@@ -32,10 +35,12 @@ const components=[
     DigitOnlyDirective,
     TwoDigitCommanDirective,
    // GlobleActionButtonComponent,
-    GlobleFieldErrorComponent,
+   // GlobleFieldErrorComponent,
     GlobleTableComponent,
     ImplementSignalComponent,
     InputFieldComponent,
+    MapComponent,
+   
    
    
    

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GlobleFieldErrorComponent } from './globle-field-error.component';
+import { FieldErrorsComponent } from './field-errors.component';
 
-describe('GlobleFieldErrorComponent', () => {
-  let component: GlobleFieldErrorComponent;
-  let fixture: ComponentFixture<GlobleFieldErrorComponent>;
+describe('FieldErrorsComponent', () => {
+  let component: FieldErrorsComponent;
+  let fixture: ComponentFixture<FieldErrorsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GlobleFieldErrorComponent ]
+      declarations: [ FieldErrorsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GlobleFieldErrorComponent);
+    fixture = TestBed.createComponent(FieldErrorsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
