@@ -3,18 +3,21 @@ import { Component, OnInit } from '@angular/core';
 import {MatSnackBar, MatSnackBarRef, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
-import {FormArray, FormBuilder, FormGroup, FormsModule} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, FormsModule, Validators} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import * as moment from 'moment';
 import { MatCardTitleGroup } from '@angular/material/card';
 import { Router } from '@angular/router';
+import { of } from 'rxjs';  
+import { tap, map } from 'rxjs/operators';  
+import { compareTwoDate } from '../core/constants/app.constant';
+  
 enum Days{
 	Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
-
 }
 
-//import 'moment/locale/pt-br';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -23,6 +26,7 @@ enum Days{
 })
 export class DashboardComponent implements OnInit {
 	myForm:any
+	promoSetupForm:any;
 	
 	// columns:any=[]
 	// data:any[]=[]
@@ -60,6 +64,7 @@ export class DashboardComponent implements OnInit {
 	// {position: 24, name: 'Celium', weight: 4.0026, symbol: 'He'},
 	
 ]
+	stDate: any;
 	
 	
 
@@ -74,6 +79,9 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit():void {
+	this.myRxjsOperator_Exercise()
+
+	// **********************************
   this.myForm= this.fb.group({
 		abc:[''],
 		// auther:this.fb.array([
@@ -84,7 +92,7 @@ export class DashboardComponent implements OnInit {
 	})
 	
 	
-	//****************************************
+	//**************************************** Regarding Moment js 
 //const moment = require('moment');
 
 // let nowMoment = moment.utc();
@@ -154,5 +162,48 @@ receiveData(ev:any){
 sub(){
 	console.log("valCheck-------->>>>",this.myForm.value)
 }
+ myRxjsOperator_Exercise(){
+	const source = of(1, 2, 3, 4, 5);
+	const example = source.pipe(  
+		tap(val => console.log(`BEFORE MAP: ${val}`)),  
+		map(val => val + 10),  
+		tap(val => console.log(`AFTER MAP: ${val}`))  
+	  );  
+	  //'tap' does not transform values  
+	  const subscribe = example.subscribe(val => console.log(val));  
+ }
+ buildFrom() {
+    this.promoSetupForm = this.fb.group({
+      active: [true],
+      amount: ['', [Validators.required]],
+      effectiveEndDate: ['', [Validators.required]],
+      effectiveStartDate: ['', [Validators.required]],
+      id: [0],
+      promoCode: ['', [Validators.required]],
+      promoDescription: [''],
+    });
+  }
 
+ changeStDate(evn:any) {
+    this.stDate = evn;
+    let stValue = this.promoSetupForm?.value?.effectiveStartDate;
+    let endValue = this.promoSetupForm?.value?.effectiveEndDate;
+    if (stValue && endValue) {
+      const isValidDate = compareTwoDate(stValue, endValue);
+      if (!isValidDate) {
+        this.promoSetupForm.patchValue({
+          effectiveEndDate: null
+        })
+      }
+    }
+  }
+
+  dateFormatForPatch(date:any) {
+    console.log("date", date);
+    if (date != null) {
+      return moment(date, 'DD/MM/YYYY').toDate()
+    } else {
+      return null;
+    }
+  }
 }

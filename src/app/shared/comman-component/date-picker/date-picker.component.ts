@@ -1,31 +1,63 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+//import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, forwardRef } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-date-picker',
   templateUrl: './date-picker.component.html',
-  styleUrls: ['./date-picker.component.css']
+  styleUrls: ['./date-picker.component.css'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => DatePickerComponent),
+      multi: true,
+    },
+  ],
 })
+
 export class DatePickerComponent implements OnInit {
-  startDate:any
-  endDate:any
-  myDatePickerForm:any
-  // startDate = new FormControl(new Date());
-  // endDate = new FormControl(new Date());
+  @Input() placeholder: string = ""
+  @Input() fieldLabel : string =""
+  @Input() minStartDate = moment().toDate();
+  @Output() onchangeDatePickerValue = new EventEmitter<any>();
 
-  constructor(private fb:FormBuilder) { }
+  inputValue: any;
 
+  OnChange: any = () => { };
+  OnTouch: any = () => { };
 
-  ngOnInit(): void {
-    this.buildForm()
-   //this.startDate=this.myDatePickerForm.get('startDate').value
+  constructor() { }
+  ngOnInit(): void { }
+
+  writeValue(value: any): void {
+    this.inputValue = value;
+    if (value) {
+      let date = moment(value).format("DD/MM/YYYY");
+      this.inputValue = moment(value, 'DD/MM/YYYY').toDate();
+      this.OnChange(moment(this.inputValue).format("DD/MM/YYYY"));
+    }
   }
- buildForm(){
-  // this.myDatePickerForm=this.fb.group({
-  //   startDate:["",new Date()],
-  //   endDate:["",new Date()]
+  ngOnChanges() {
+    if (this.minStartDate) {
+      this.minStartDate = moment(this.minStartDate, 'DD/MM/YYYY').toDate();
+    }
+  }
+  registerOnChange(fun: any): void {
+    this.OnChange = fun;
+  }
+  registerOnTouched(fun: any): void {
+    this.OnTouch = fun;
+  }
+  setDisabledState?(isDisabled: boolean): void { }
 
-  // })
-  
- }
+  selectionChange(item: any) {
+    let date = moment(item.value).format("DD/MM/YYYY");
+    console.log('datedate', date);
+    this.OnChange(date);
+    this.onchangeDatePickerValue.emit(date);
+  }
 }
+
+
+
