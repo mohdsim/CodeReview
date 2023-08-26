@@ -26,6 +26,7 @@ const components=[
   DropdownComponent,
   DatePickerComponent,
   FieldErrorsComponent,
+  InputFieldComponent,
 
 ]
 
@@ -38,7 +39,7 @@ const components=[
    // GlobleFieldErrorComponent,
     GlobleTableComponent,
     ImplementSignalComponent,
-    InputFieldComponent,
+    
     MapComponent,
    
    

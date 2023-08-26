@@ -1,0 +1,39 @@
+
+<!-- <form [formGroup]="myForm">
+   <div>
+    <app-input-field  formControlName="checkFormVtrl"></app-input-field>
+   </div>
+ start Form Array
+ <div class="formArrayWrapper" formArrayName="auther">
+    1.Add formArrayName 2. settup  skills in type script 
+    <div>
+        <app-input-field  formControlName="checkFormVtrl"></app-input-field>
+    
+       </div>
+       <div class="btn">
+        <button mat-raised-button color="primary" (click)="addMore()" >Add Skills</button>
+       </div>
+ </div>
+   
+
+</form> -->
+
+
+<form [formGroup]="myForm">
+    <app-input-field  formControlName="checkFormVtrl" placeholder=" First value"></app-input-field>
+    <!-- 1.Add formArrayName auther 
+        2. settup  auther in type script  -->
+    <div  formArrayName="auther">
+
+       <ng-container class="dynamicControl" *ngFor="let auth of auther.controls; let i=index " [formGroupName]="i">
+            <app-input-field  placeholder="Form Array value"  formControlName="first_Name"></app-input-field>
+            <button mat-raised-button color="primary"  (click)="removeAuther(i)" > Remove Auther </button>
+        </ng-container>
+        <div>
+            <button mat-raised-button color="primary" (click)="addMore()" > Add Skiles </button>
+        </div>
+   </div>
+</form>
+
+<button class="btn" mat-raised-button color="primary"(click)="onSave()">Submit</button>
+

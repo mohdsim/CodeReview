@@ -71,7 +71,8 @@ export class DashboardComponent implements OnInit {
 
   
 
-  constructor(private snackBar: MatSnackBar,
+  constructor(
+	private snackBar: MatSnackBar,
 	          private fb:FormBuilder,
 			  private router:Router
 			  ) {
@@ -84,10 +85,10 @@ export class DashboardComponent implements OnInit {
 	// **********************************
   this.myForm= this.fb.group({
 		abc:[''],
-		// auther:this.fb.array([
-		// this.getAutherControl()
+		auther:this.fb.array([
+		this.getAutherControl()
 
-		// ])
+		])
 
 	})
 	

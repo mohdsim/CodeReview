@@ -1,0 +1,36 @@
+<p>javascript works!</p>
+<form [formGroup]="myForm">
+    <app-input-field placeholder="search"  formControlName="studentId" (onchangeInputValue)="handleOnSearch($event)"></app-input-field>
+</form>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>S_id</th>
+                <th>S_Name</th>
+                <th>S_Class</th>
+                <th>S_Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of  tableArray">
+                <td>{{item.studentId}}</td>
+                <td>{{item.studentName}}</td>
+                <td>{{item.studentClass}}</td>
+                <td>{{item.studentContact}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<form [formGroup]="myForm">
+    <app-input-field  formControlName="studentId"></app-input-field>
+    <app-input-field  formControlName="studentName"></app-input-field>
+    <app-input-field  formControlName="studentClass"></app-input-field>
+    <app-input-field  formControlName="studentContact"></app-input-field>
+
+</form>
+
+<button mat-raised-button (click)="onSave()" color="primary">Submit</button>
+
+

@@ -19,7 +19,7 @@
 </form>
 
 
-<button (click)="sub()">Cleck Me</button>
+<button (click)="sub()">Submit Form</button>
 <app-action-button 
 (ClickMe)="receiveData($event)"
  btnTitle="I am  Button" buttonSize="medium-button">
@@ -29,7 +29,7 @@
  <p>comman Button</p>
  <h1>Multiple file Uplode</h1>
 <app-multi-file-uplode></app-multi-file-uplode>
-<!-- <h1>Dynamic Control Practise</h1>
+ <h1>Dynamic Control Practise</h1>
 
  <form [formGroup]="myForm">
     <div  formArrayName="auther">
@@ -42,7 +42,7 @@
         </ng-container>
         <div>
             <button mat-raised-button color="primary" (click)="addMore()" >
-                (click)="removeAuther(i)"
+                <!-- (click)="removeAuther(i)" -->
                Add Skiles
              </button>
         </div>
@@ -51,9 +51,9 @@
         
     
     </div>
-</form>  -->
+</form> 
 <!-- ********************************************************** -->
-<form [formGroup]="promoSetupForm">
+<!-- <form [formGroup]="promoSetupForm">
 <span class="fieldwrap">
     <app-date-picker formControlName="effectiveStartDate" placeholder="Effective Start Date"
         fieldLabel="Effective Start Date" (onchangeDatePickerValue)="changeStDate($event)"></app-date-picker>
@@ -64,4 +64,4 @@
 </span>
 
 
-</form>
+</form> -->

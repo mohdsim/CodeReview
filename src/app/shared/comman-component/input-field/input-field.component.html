@@ -1,54 +1,39 @@
 <div class="matfieldwrap">
-      <mat-label *ngIf="fieldLabel">{{ fieldLabel }} <span *ngIf="mandetory" class="asterisk">*</span>
-      </mat-label>
-
+  <mat-label *ngIf="fieldLabel">{{ fieldLabel }} <span *ngIf="mandetory" class="asterisk">*</span>
+  </mat-label>
 <mat-form-field appearance="outline" [floatLabel]="'always'">
-
-    <input
-       *ngIf="!onlyDigit"
-        matInput
-        [type]="inputType"
-        [readonly]="readonly"
-        [placeholder]="placeholder"
-        autocomplete="off"
-        class="ainput"
-        name="inputValue"
-       />
-    <!-- (input)="inputchange($event.target.value)" [value]="inputValue" -->
-
-    <input
-
-      *ngIf="onlyDigit"
-
-      appInputOnlyDigit
-
-      matInput
-
-      [type]="inputType"
-
-      [readonly]="readonly"
-
-      [placeholder]="placeholder"
-
-      autocomplete="off"
-
-      class="ainput"
-
-      
-
-      name="inputValue"
-
-
-
-
-    />
-
-  </mat-form-field>
-
- 
+  <input
+    *ngIf="!onlyDigit"
+    matInput
+    [type]="inputType"
+    [readonly]="readonly"
+    [placeholder]="placeholder"
+    autocomplete="off"
+    class="ainput"
+    (input)="inputchange($event.target)" 
+    [value]="inputValue"
+    name="inputValue"
+    
+  />
+  <!-- (input)="inputchange($event.target.value)" [value]="inputValue" -->
+  <input
+    *ngIf="onlyDigit"
+    appInputOnlyDigit
+    matInput
+    [type]="inputType"
+    [readonly]="readonly"
+    [placeholder]="placeholder"
+    autocomplete="off"
+    class="ainput"
+    (input)="inputchange($event)"
+    name="inputValue"
+    [value]="inputValue"
+  
+  />
+  <!-- (input)="inputchange($event.target.value)" [value]="inputValue" -->
+</mat-form-field>
 
 </div>
-
 
 
 

@@ -36,7 +36,8 @@ import { ChartComponent } from './chart/chart.component';
     DateComponent,
     MultiFileUplodeComponent,
     SentMailComponent,
-    ChartComponent
+    ChartComponent,
+    //CalanderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+<h1>Min Max Date Picker</h1>
+<form [formGroup]="promoSetupForm">
+
+
+    <span class="fieldwrap">
+        <app-date-picker formControlName="effectiveStartDate" placeholder="Effective Start Date"
+            fieldLabel="Effective Start Date" (onchangeDatePickerValue)="changeStDate($event)"></app-date-picker>
+    </span>
+    
+    <span class="fieldwrap">
+        <app-date-picker formControlName="effectiveEndDate" [minStartDate]="stDate" placeholder="Effective End Date"
+            fieldLabel="Effective End Date"></app-date-picker>
+    </span>
+
+
+</form>
