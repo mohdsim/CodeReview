@@ -7,6 +7,8 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./form-exercise.component.css']
 })
 export class FormExerciseComponent implements OnInit {
+  //https://www.youtube.com/watch?v=-8pJcRK1ayI --first priorty
+  //https://www.youtube.com/watch?v=7fjpC1gHkeQ
  // https://www.youtube.com/watch?v=A7yd78pP39o for Form Array
   myForm:any
 
@@ -20,24 +22,21 @@ export class FormExerciseComponent implements OnInit {
       checkFormVtrl1:[''],
       checkFormVtr2:[''],
       checkFormVtr3:[''],
-      auther:this.fb.array([
-		   this.getAutherControl()
-      ])
-    })
+     // 2  define author controle
+      auther:this.fb.array([this.getAutherControl()])
+    })}
 
-  }
-  //private
+
+  // 1 -  Get Form Array Controle or All form array control define here in this method
  getAutherControl():FormGroup{
     return this.fb.group({
       first_Name:'',
-      
-    })
-  
-  }
-  //get auther controle
+      last_Name:'',
+    })}
+
+  // 3. get auther controle for looping in  html  file from the main form
   //public 
   get auther():FormArray{
-      // return <FormArray> this.myForm.get('auther')
       return this.myForm.get('auther') as FormArray
     }
 

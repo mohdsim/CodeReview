@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { MinMaxDateComponent } from './min-max-date/min-max-date.component';
 import { FormExerciseComponent } from './form-exercise/form-exercise.component';
 import { JavascriptComponent } from './javascript/javascript.component';
+import { RxjsoperatorsComponent } from './rxjsoperators/rxjsoperators.component';
+//import { RxjsoperatorsComponent } from '../rxjsoperators/rxjsoperators.component';
 
 const routes: Routes = [
   {
@@ -13,6 +15,9 @@ const routes: Routes = [
   },
   {
     path:'javascript-exercise',component:JavascriptComponent
+  },
+  {
+    path:'rxjs-Operators',component:RxjsoperatorsComponent
   }
 ];
 

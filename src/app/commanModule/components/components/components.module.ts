@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormExerciseComponent } from './form-exercise/form-exercise.component';
 import { JavascriptComponent } from './javascript/javascript.component';
 import { MaterialModule } from 'src/app/material/material.module';
+import { RxjsoperatorsComponent } from './rxjsoperators/rxjsoperators.component';
 //import { MinMaxDateComponent } from './min-max-date/min-max-date.component';
 
 const components=[
@@ -22,7 +23,8 @@ const components=[
   
     MinMaxDateComponent,
     FormExerciseComponent,
-    JavascriptComponent
+    JavascriptComponent,
+    RxjsoperatorsComponent
   ],
   imports: [
     CommonModule,

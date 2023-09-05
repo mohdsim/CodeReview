@@ -21,8 +21,10 @@ export class MinMaxDateComponent implements OnInit {
     this.promoSetupForm = this.fb.group({
       effectiveEndDate: ['', [Validators.required]],
       effectiveStartDate: ['', [Validators.required]],
+      effectiveStartDate2: ['']
     });
   }
+  // moment(date, 'DD/MM/YYYY').toDate()
 
  changeStDate(evn:any) {
     this.stDate = evn;
@@ -45,6 +47,11 @@ export class MinMaxDateComponent implements OnInit {
     } else {
       return null;
     }
+  }
+
+  SubmitForm(){
+    console.log("check Form Value", this.promoSetupForm)
+
   }
 
 }
