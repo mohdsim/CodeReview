@@ -4,11 +4,13 @@ import { ControlValueAccessor } from '@angular/forms';
 @Directive({
   selector: '[appDigitOnly]'
 })
-// export class DigitOnlyDirective {
 
-//   constructor() { }
+// /^\d*\.{2}?\d*$/
+// /^\d*\.?\d{2}*$/
 
-// }
+//  const isDigit =  /^\d*\.?\d{2}*$/.test(event.key);
+
+
 export class DigitOnlyDirective {
   constructor(private el: ElementRef) { }
   @HostListener('input',['$event'])
@@ -17,9 +19,10 @@ export class DigitOnlyDirective {
      console.log(event)
     const initalValue = this.el.nativeElement.value;
     console.log(initalValue)
-     this.el.nativeElement.value = initalValue.replace(/[^0-9]*/g, '');
-     if ( initalValue !== this.el.nativeElement.value) {
-       event.stopPropagation();
+    //  this.el.nativeElement.value = initalValue.replace(/[^0-9]*/g, '');
+    this.el.nativeElement.value = initalValue.replace(/[^0-9]*/g, '');
+     if (initalValue !== this.el.nativeElement.value) {
+      event.stopPropagation();
   
      }
  

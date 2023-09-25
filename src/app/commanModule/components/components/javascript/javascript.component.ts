@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { time } from 'console';
 
 @Component({
   selector: 'app-javascript',
@@ -33,6 +34,12 @@ export class JavascriptComponent implements OnInit {
         "studentContact": "7860632946"
     },
     {
+      "studentId": "1",
+      "studentName": "Mohd",
+      "studentClass": "1",
+      "studentContact": "7860632949"
+  },
+    {
         "studentId": "15",
         "studentName": "Raju",
         "studentClass": "5",
@@ -50,6 +57,7 @@ export class JavascriptComponent implements OnInit {
   constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.javascriptProgram()
     this.buildForm()
   }
 
@@ -74,5 +82,27 @@ export class JavascriptComponent implements OnInit {
   onSave(){
     console.log(this.tableArray)
     this.tableArray.push(this.myForm.value)}
+
+    javascriptProgram(){
+
+    let res = this.tableArray.filter((items:any)=>{
+        if(items.studentName.startsWith("Mohd Taha")){return items}
+        
+       })
+    // let res=  this.tableArray.map((item:any)=>{
+    //   this.tableArray.filter((items:any)=>{
+    //     if(items.studentName===""){
+    //       return items 
+           
+    //     }
+    //     // return item.studentName==
+    //    })
+    //   // return item
+    //   }
+    //   )
+      console.log("res check ----->",res)
+       
+       
+     }
 
 }

@@ -9,6 +9,8 @@ import { FormExerciseComponent } from './form-exercise/form-exercise.component';
 import { JavascriptComponent } from './javascript/javascript.component';
 import { MaterialModule } from 'src/app/material/material.module';
 import { RxjsoperatorsComponent } from './rxjsoperators/rxjsoperators.component';
+import { StudentsComponent } from './students/students.component';
+import { StudentFormComponent } from './student-form/student-form.component';
 //import { MinMaxDateComponent } from './min-max-date/min-max-date.component';
 
 const components=[
@@ -24,7 +26,9 @@ const components=[
     MinMaxDateComponent,
     FormExerciseComponent,
     JavascriptComponent,
-    RxjsoperatorsComponent
+    RxjsoperatorsComponent,
+    StudentsComponent,
+    StudentFormComponent
   ],
   imports: [
     CommonModule,

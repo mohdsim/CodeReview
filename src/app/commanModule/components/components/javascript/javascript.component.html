@@ -2,6 +2,15 @@
 <form [formGroup]="myForm">
     <app-input-field placeholder="search"  formControlName="studentId" (onchangeInputValue)="handleOnSearch($event)"></app-input-field>
 </form>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>For Test</mat-label>
+      <input appDigitOnly matInput placeholder="Ex. Pizza" value="Sushi">
+    </mat-form-field>
+  
+   
+
 <div>
     <table>
         <thead>

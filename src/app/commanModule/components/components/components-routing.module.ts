@@ -4,6 +4,7 @@ import { MinMaxDateComponent } from './min-max-date/min-max-date.component';
 import { FormExerciseComponent } from './form-exercise/form-exercise.component';
 import { JavascriptComponent } from './javascript/javascript.component';
 import { RxjsoperatorsComponent } from './rxjsoperators/rxjsoperators.component';
+import { StudentsComponent } from './students/students.component';
 //import { RxjsoperatorsComponent } from '../rxjsoperators/rxjsoperators.component';
 
 const routes: Routes = [
@@ -18,6 +19,9 @@ const routes: Routes = [
   },
   {
     path:'rxjs-Operators',component:RxjsoperatorsComponent
+  },
+  {
+    path:'student-list',component:StudentsComponent
   }
 ];
 

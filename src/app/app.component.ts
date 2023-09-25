@@ -14,9 +14,14 @@ import { mergeMap, map, filter } from 'rxjs/operators';
 export class AppComponent {
   panelOpenState = false;
   title = 'sideNav';
- res= setTimeout(() => {
-  this.myLoderFunc()
-  },4000)
+  user:User = {email:"abc",mobile:1}
+  //res = setTimeout(()=>{this.myLoderFunc()},2000)
+ // res = setInterval(()=>{this.myLoderFunc()},2000)
+//  res= setTimeout(() => {
+//   this.myLoderFunc()
+//   },4000)
+
+
 
 
   
@@ -60,3 +65,14 @@ export class AppComponent {
      .subscribe(res=>console.log(res))
   }
 }
+export interface User {
+  email?: string;
+  mobile?:number
+}
+
+export enum status{
+  Quotation='Quotation',
+  CounterSale='CounterSale'
+}
+
+

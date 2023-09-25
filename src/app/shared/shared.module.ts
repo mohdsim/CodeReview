@@ -39,14 +39,8 @@ const components=[
    // GlobleFieldErrorComponent,
     GlobleTableComponent,
     ImplementSignalComponent,
-    
     MapComponent,
-   
-   
-   
-   
-    
-  ],
+   ],
   imports: [
     CommonModule,
     SharedRoutingModule,

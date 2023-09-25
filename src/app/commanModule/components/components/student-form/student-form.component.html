@@ -1,0 +1,23 @@
+<p>student-form works!</p>
+<form [formGroup]="studentForm" class="formContainer">
+
+<ng-container >
+    <div class="leftInput">
+        <app-input-field placeholder="Full Name" formControlName="stName"></app-input-field>
+        <app-input-field placeholder="Class" formControlName="stClass"></app-input-field>
+        <app-input-field placeholder="Dob" formControlName="stDob"></app-input-field>
+        <app-input-field placeholder="Aadhar" formControlName="stUid"></app-input-field>
+        <app-input-field placeholder="Mob" formControlName="stContact"></app-input-field>
+       
+    </div>
+     <div>
+        <app-input-field placeholder="Father Name" formControlName="stFatherName"></app-input-field>
+        <app-input-field placeholder="Mother Name" formControlName="stMotherName"></app-input-field>
+        <app-input-field placeholder="Status" formControlName="stStatus"></app-input-field>
+        <app-input-field placeholder="Address" formControlName="stAddress"></app-input-field>
+        <p><button mat-raised-button color="primary" (click)="submit()" >Submit</button> <button mat-raised-button color="primary" mat-dialog-close>Cancel</button></p>
+     </div>
+</ng-container>
+</form>
+
+
