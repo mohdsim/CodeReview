@@ -17,9 +17,9 @@ export class AppComponent {
   user:User = {email:"abc",mobile:1}
   //res = setTimeout(()=>{this.myLoderFunc()},2000)
  // res = setInterval(()=>{this.myLoderFunc()},2000)
-//  res= setTimeout(() => {
-//   this.myLoderFunc()
-//   },4000)
+ res= setTimeout(() => {
+  this.myLoderFunc()
+  },4000)
 
 
 

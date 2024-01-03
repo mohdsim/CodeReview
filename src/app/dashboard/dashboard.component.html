@@ -1,5 +1,17 @@
 <p>dashboard works!</p>
 
+<div>
+    <form [formGroup]="myForm">
+        <!-- <app-dropdown [Options]="desizeredMenuOption" formControlName="abc" placeholder="Check TwoWay Binding"></app-dropdown> -->
+        <mat-form-field>
+            <mat-label>Input</mat-label>
+            <input matInput formControlName="abc">
+          </mat-form-field>
+    </form>
+    <h1>Using Letest TwoWay DataBinding</h1>
+    <p>Your Enterd Value is--->{{myForm.get('abc').value}}</p>
+</div>
+
 <app-globle-table 
 (tableActions)="actions()"
 (tableRowActions)="actionOntableRow()"
