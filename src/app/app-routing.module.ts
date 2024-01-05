@@ -45,6 +45,9 @@ const routes: Routes = [
    { path: 'first', component: FirstComponent},
    {
     path:'components',loadChildren:()=>import('./commanModule/components/components/components.module').then((m)=>m.ComponentsModule)
+   },
+   {
+    path:'students',loadChildren:()=> import('./commanModule/students-data/students-data.module').then((m)=>m.StudentsDataModule)
    }
   //  {
   //   path:'a',loadChildren:()=>import('./commanModule/components/components.module').then((m)=>m.ComponentsModule)
