@@ -1,0 +1,28 @@
+
+<h1>Mohd Ahtesham  {{givenString | uppercase}}</h1>
+<h1>{{currentdata | date:'dd/mm/yyyy'}}</h1>
+<form [formGroup]="myForm">
+  
+    <mat-form-field appearance="outline" class="test-class">
+        <input formControlName="fName" matInput placeholder="border-radius test"/>
+   </mat-form-field>
+   <mat-form-field appearance="outline"  >
+        <input formControlName="lName" matInput placeholder="border-radius test"/>
+   </mat-form-field>
+    <div  formArrayName="hobbies">
+
+      <ng-container class="dynamicControl" *ngFor="let hobby of hobbies.controls; let i=index " [formGroupName]="i">
+           <mat-form-field appearance="outline"  >
+                <input  matInput placeholder="Add Hobbies" formControlName="abc_"/>
+           </mat-form-field>
+            <button mat-raised-button color="primary"  (click)="removeHobbies(i)" > Remove Hobbies </button>
+        </ng-container>
+        <div>
+            <button mat-raised-button color="primary" (click)="addHobbies()" > Add Hobbies </button>
+        </div>
+   </div>
+
+   <div>
+    <button mat-raised-button color="primary" (click)="submitHobbies()" > Submit </button>
+</div>
+</form>

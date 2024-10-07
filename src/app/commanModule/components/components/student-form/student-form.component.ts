@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { StudentsComponent } from '../students/students.component';
 
@@ -24,7 +24,7 @@ export class StudentFormComponent implements OnInit {
   buildForm(){
     this.studentForm=this.fb.group({
      stId:[null],
-     stName:[null],
+     stName:[null,Validators.required],
      stClass:[null],
      stDob:[null],
      stUid:[null],
@@ -37,6 +37,7 @@ export class StudentFormComponent implements OnInit {
   }
 
   submit(){
+    console.log('this.studentForm>>>>',this.studentForm)
     this.dialogRef.close(this.studentForm.value);
   }
 

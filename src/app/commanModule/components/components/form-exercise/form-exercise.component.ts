@@ -31,7 +31,7 @@ export class FormExerciseComponent implements OnInit {
  getAutherControl():FormGroup{
     return this.fb.group({
       first_Name:'',
-      last_Name:'',
+      // last_Name:'',
     })}
 
   // 3. get auther controle for looping in  html  file from the main form
@@ -46,6 +46,7 @@ export class FormExerciseComponent implements OnInit {
     }
 
     removeAuther(index:any){
+      console.log("clicked index-->",index)
       this.auther.removeAt(index)
     }
 

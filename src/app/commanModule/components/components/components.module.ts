@@ -11,6 +11,8 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { RxjsoperatorsComponent } from './rxjsoperators/rxjsoperators.component';
 import { StudentsComponent } from './students/students.component';
 import { StudentFormComponent } from './student-form/student-form.component';
+import { FormarrayComponent } from './formarray/formarray.component';
+import { GenrateExcelComponent } from './genrate-excel/genrate-excel.component';
 //import { MinMaxDateComponent } from './min-max-date/min-max-date.component';
 
 const components=[
@@ -28,7 +30,9 @@ const components=[
     JavascriptComponent,
     RxjsoperatorsComponent,
     StudentsComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    FormarrayComponent,
+    GenrateExcelComponent
   ],
   imports: [
     CommonModule,

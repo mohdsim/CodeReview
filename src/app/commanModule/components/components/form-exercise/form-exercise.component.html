@@ -10,7 +10,7 @@
 
        <ng-container class="dynamicControl" *ngFor="let auth of auther.controls; let i=index " [formGroupName]="i">
             <app-input-field  placeholder="First Name"  formControlName="first_Name"></app-input-field>
-            <app-input-field  placeholder="Last Name"  formControlName="last_Name"></app-input-field>
+            <!--<app-input-field  placeholder="Last Name"  formControlName="last_Name"></app-input-field> -->
             <button mat-raised-button color="primary"  (click)="removeAuther(i)" > Remove Auther </button>
         </ng-container>
         <div>
