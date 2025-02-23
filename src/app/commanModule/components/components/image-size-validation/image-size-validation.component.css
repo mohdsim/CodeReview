@@ -1,0 +1,18 @@
+.upload-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .preview-image {
+    max-width: 300px;
+    margin-top: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  

@@ -13,8 +13,16 @@ import { StudentsComponent } from './students/students.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { FormarrayComponent } from './formarray/formarray.component';
 import { GenrateExcelComponent } from './genrate-excel/genrate-excel.component';
+import { ImagesOperationComponent } from './images-operation/images-operation.component';
+import { ImageUploadeComponent } from './image-uploade/image-uploade.component';
+import { ImageSizeValidationComponent } from './image-size-validation/image-size-validation.component';
+import { ImageSizeWithCropeComponent } from './image-size-with-crope/image-size-with-crope.component';
+import { ImageSizeWithCropeAndCameraComponent } from './image-size-with-crope-and-camera/image-size-with-crope-and-camera.component';
+import { HexaColorPickerComponent } from './hexa-color-picker/hexa-color-picker.component';
+//import { ColorPickerModule } from 'ngx-color-picker';
+//import { MatColorPickerModule } from '@angular-material-components/color-picker'
 //import { MinMaxDateComponent } from './min-max-date/min-max-date.component';
-
+//import { NgxMatColorPickerModule } from '@angular-material-components/color-picker';
 const components=[
   //MinMaxDateComponent
 
@@ -32,14 +40,23 @@ const components=[
     StudentsComponent,
     StudentFormComponent,
     FormarrayComponent,
-    GenrateExcelComponent
+    GenrateExcelComponent,
+    ImagesOperationComponent,
+    ImageUploadeComponent,
+    ImageSizeValidationComponent,
+    ImageSizeWithCropeComponent,
+    ImageSizeWithCropeAndCameraComponent,
+    HexaColorPickerComponent
   ],
   imports: [
     CommonModule,
     ComponentsRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    //ColorPickerModule
+   // NgxMatColorPickerModule
+    //MatColorPickerModule
   ],
   // declarations: [
  

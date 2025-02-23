@@ -1,0 +1,28 @@
+
+<div class="upload-container">
+    
+    
+    <h1>Image uploade With Crope functionality</h1>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+  
+    <div *ngIf="imageChangedEvent">
+      <!-- <image-cropper
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="1 / 1"
+        format="png"
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="imageLoaded()"
+        (cropperReady)="cropperReady()"
+        (loadImageFailed)="loadImageFailed()"
+      ></image-cropper> -->
+  
+      <button (click)="onUpload()" [disabled]="!croppedImage">Upload Cropped Image</button>
+    </div>
+  
+    
+    <div *ngIf="croppedImage">
+      <h3>Preview:</h3>
+      <img [src]="croppedImage" alt="Cropped Image" class="preview-image" />
+    </div>
+  </div>
