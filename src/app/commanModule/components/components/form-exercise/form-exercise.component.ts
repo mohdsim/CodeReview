@@ -16,6 +16,11 @@ export class FormExerciseComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildForm()
+
+    // Checking How it's Works 
+    this.myForm.controls['checkFormVtrl1'].valueChanges.subscribe((value:any) => {
+      console.log('name has changed:', value)
+ });
   }
   buildForm(){
     this.myForm=this.fb.group({

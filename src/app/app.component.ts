@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { error } from 'console';
-import { timeout } from 'rxjs';
+import { forkJoin, timeout } from 'rxjs';
 import { of, interval } from 'rxjs';
 import { mergeMap, map, filter } from 'rxjs/operators';
+import { ErrorHandleService } from './error-handle.service';
 
 
 @Component({
@@ -26,8 +27,17 @@ export class AppComponent {
 
   
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private _errorHandleService:ErrorHandleService
+
+  ) { }
+
+  
   ngOnInit() {
+
+    this.myErrorHandleFunction()
+    this.makeApiCalls()
     const val = of(1,2,3,4,5,6,7)
     val.pipe(
       // filter((i)=>{ return i == 50}),
@@ -35,36 +45,44 @@ export class AppComponent {
      
 
     ))
-   .subscribe((i)=>{console.log(i)})
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-    
-  }
+   .subscribe((i)=>{console.log(i)}) }
 
   myLoderFunc() {
      return this.http.get<any>('https://jsonplaceholder.typicode.com/posts')
      .subscribe(res=>console.log(res))
+
+     
+  }
+
+  // **************
+  makeApiCalls() {
+    const api1 = this.http.get('https://jsonplaceholder.typicode.com/posts');
+    const api2 = this.http.get('https://jsonplaceholder.typicode.com/posts');
+    const api3 = this.http.get('https://jsonplaceholder.typicode.com/posts');
+  
+    forkJoin([api1, api2, api3]).subscribe({
+      next: ([response1, response2, response3]) => {
+        console.log('API 1 Response:', response1);
+        console.log('API 2 Response:', response2);
+        console.log('API 3 Response:', response3);
+        
+      },
+      error: (error) => {
+        console.error('Error in API calls:', error);
+      },
+    });}
+  // *************
+
+  myErrorHandleFunction(){
+    this._errorHandleService.myApiCall().subscribe((res:any)=>{
+      console.log("Error handle api call",res)
+
+    },(error:any)=>{
+      console.log("Gated Error",error)
+    })
   }
 }
+
 export interface User {
   email?: string;
   mobile?:number

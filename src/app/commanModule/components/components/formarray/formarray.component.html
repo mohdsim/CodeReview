@@ -9,14 +9,15 @@
    <mat-form-field appearance="outline"  >
         <input formControlName="lName" matInput placeholder="border-radius test"/>
    </mat-form-field>
+   
     <div  formArrayName="hobbies">
-
-      <ng-container class="dynamicControl" *ngFor="let hobby of hobbies.controls; let i=index " [formGroupName]="i">
+        <ng-container class="dynamicControl" *ngFor="let hobby of hobbies.controls; let i=index " [formGroupName]="i">
            <mat-form-field appearance="outline"  >
                 <input  matInput placeholder="Add Hobbies" formControlName="abc_"/>
            </mat-form-field>
             <button mat-raised-button color="primary"  (click)="removeHobbies(i)" > Remove Hobbies </button>
-        </ng-container>
+      </ng-container>
+
         <div>
             <button mat-raised-button color="primary" (click)="addHobbies()" > Add Hobbies </button>
         </div>
@@ -26,3 +27,82 @@
     <button mat-raised-button color="primary" (click)="submitHobbies()" > Submit </button>
 </div>
 </form>
+
+<!-- *****************************
+
+<div class="login-page-container">
+   
+     <span>
+      <h1>User Registration </h1>
+     </span>
+      <form [formGroup]="userForm" class="form-t">
+         
+       
+        <span class="field-wrapper">
+          <span class="matfieldlabel">Username</span>
+           <mat-form-field class="example-full-width mat-form-field" appearance="outline">
+             <input matInput  formControlName="userName" placeholder="Enter your user name">
+          </mat-form-field>
+          <div *ngIf="submitt && userName.errors">
+            <span *ngIf="userName.errors.required" class="error-msg"
+              >Please enter your userName
+            </span>
+         </div>
+        </span> 
+  
+        
+        <span class="field-wrapper">
+          <span class="matfieldlabel"> Email</span>
+           <mat-form-field class="example-full-width mat-form-field" appearance="outline">
+             <input matInput  formControlName="email" placeholder="Enter your email">
+          </mat-form-field>
+          <div *ngIf="submitt && email.errors">
+            <span *ngIf="email.errors.required" class="error-msg"
+              >Please enter your email address
+            </span>
+  
+            <div class="error-msg" *ngIf="email.errors.pattern">
+              email not valid. Please provide valid email
+            </div> 
+        </div>
+        </span> 
+          
+       
+         <span class="field-wrapper">
+           <span class="matfieldlabel">Password</span>
+            <mat-form-field class="example-full-width mat-form-field" appearance="outline">
+              <input type="password" formControlName="password" matInput placeholder="Enter your password">
+           </mat-form-field>
+           <div *ngIf="submitt && password.errors">
+              <span *ngIf="password.errors.required" class="error-msg"
+                >Please enter your valid password
+              </span>
+           </div>
+         </span> 
+         
+         <span >
+         <button class="login-btn" mat-button color="primary" (click)="create()">Continue</button>
+        </span>
+          
+        </form>
+  </div> -->
+  
+
+  <button (click)="sortBy('name')">Sort by Name</button>
+<button (click)="sortBy('age')">Sort by Age</button>
+  
+<!-- for print 3 item in one line -->
+
+<div>
+     <span *ngFor="let item of items; let i = index">
+       {{ item }}
+       <!-- Add a <br> tag after every 3rd item -->
+       <br *ngIf="(i + 1) % 3 === 0">
+     </span>
+   </div>
+
+
+   <!-- span {
+     display: inline-block;
+     margin-right: 16px; /* Add spacing between items */
+   } -->
